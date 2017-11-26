@@ -1,0 +1,23 @@
+Games before GUIs
+
+Before bit-mapped color displays became common and made graphics-intensive games the norm, there was a vigorous tradition of games that required only textual interfaces or the character-cell graphics on a VDT.
+
+These VDT games often found their way to early microcomputers as well. In part this was because some of those early micros themselves had weak or nonexistent graphical capabilities, and in part because textual games were relatively easy to port and featured as type-in projects in magazines and books.
+
+The oldest group of games that were once common knowledge are the Trek family, a clade of games going back to 1971 in which the player flew the starship Enterprise through the Federation fighting Klingons and Romulans and other enemies. Every hacker over a certain age remembers spending hours playing these.
+
+The history of the Trek clade is too complex to summarize here. The thing to notice about them is that the extremely crude interface (designed not even for VDTs but for teletypes!) hid what was actually a relatively sophisticated wargame in which initiative, tactical surprise, and logistics all played significant roles.
+
+Every hacker once knew what the phrase "You are in a maze of twisty little passages, all alike" meant, and often used variants about confusing situations in real life (For example, "You are in a maze of twisty little technical standards, all different"). It was from the very first dungeon-crawling adventure game, Colossal Cave Adventure (1976-77). People who knew this game from its beginnings often thought of it as ADVENT, after its 6-character filename on the PDP-10 where it first ran [9].
+
+When the original author of ADVENT wasn’t inventing an entire genre of computer games, he was writing the low-level firmware for some of the earliest ARPANET routers. This was not generally known at the time, but illustrates how intimate the connection between these early games and the cutting edge of serious programming was. "Game designer" was not yet a separate thing, then.
+
+You might occasionally encounter "xyzzy" as a nonce variable name. Every hacker used to know that xyzzy was a magic word in ADVENT.
+
+ADVENT had a direct successor that was even more popular - Zork, first released in 1979 by hackers at MIT on a PDP-10 (initially under the name "Dungeon") and later successfully commercialized. This game is why every hacker once knew that a zorkmid was the currency of the Great Underground Empire, and that if you wander around in dark places without your lantern lit you might be eaten by a grue.
+
+There was another family of games that took a different, more visual approach to dungeon-crawling. They are generally called "roguelikes", after the earliest widely-distributed games in this group, Rogue from 1980. They featured top-down, maplike views of dungeon levels through which the player would wander battling monsters and seeking treasure.
+
+The most widely played games in this group were Hack (1982) and Nethack (1987). Nethack is notable for having been one of the earliest programs in which the development group was consciously organized as a distributed collaboration over the Internet; at the time, this was a sufficiently novel idea to be advertised in the project’s name.
+
+Rogue’s descendants were the most popular and successful TUI games ever. Though they gradually passed out of universal common knowledge after the mid-1990s, they retain devoted minority followings even today. Their fans accurately point out that the primitive state of interface design encouraged concentration on plot and story values, leading to a surprisingly rich imaginative experience.

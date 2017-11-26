@@ -1,0 +1,88 @@
+
+<!-- Except support part, i don't think this part should be translated
+        if you think otherwise, open an issue. -->
+
+
+## Supporting this work
+
+If you enjoyed this, please contribute at my Patreon page so I won’t be forced to get a $DAYJOB and no longer have time to think up or write things like this document. I work on a lot of more serious projects too, including critical network infrastructure. So give generously; the civilization you save could be your own.
+
+
+## Related Reading
+
+How To Become A Hacker
+
+The Lost Art of C Structure Packing
+<!-- link to the articles + descriping what version of the article was translated. -->
+
+
+## Change history
+
+1.0: 2017-01-26
+
+    Initial version.
+1.1: 2017-01-27
+
+    Pin down the date DB-9 came in. Added a minor section on the persistence of octal. More on the afterlife of RS-232.
+1.2: 2017-01-29
+
+    More about the persistence of octal. Mention current-loop ASR-33s. 36-bit machines and their lingering influence. Explain ASCII shift. A bit more about ASCII-1963. Some error correction.
+1.3: 2017-01-30
+
+    Added "Key dates" and "Request to contributors".
+1.4: 2017-02-03
+
+    The curious survival of the Hayes AT command set.
+1.5: 2017-02-04
+
+    TTL in serial and maker devices. The AT Hayes prefix explained. UUCP and long distance rates. Reference to space-cadet keyboard removed, as it turned out to ship a 32-bit word. Improved description of ASCII shift.
+1.6: 2017-02-08
+
+    How VDTs explain some heritage programs, and how bitmapped displays eventually obsolesced them. Explain why the ADM-3 was called "dumb" even though it was smart.
+1.7: 2017-02-09
+
+    The BBS subculture. XMODEM/YMODEM/ZMODEM. Commercial timesharing. Two dates in USENET history.
+1.8: 2017-02-14
+
+    Heritage games. The legacy of all-uppercase terminals. Where README came from. What "core" is. The ARPANET. Monitoring your computer with a radio.
+1.9: 2017-02-17
+
+    DEL was once Rubout. The Trek games. XYZZY.
+1.10: 2017-02-20
+
+    The Break key. uuencode/uudecode. Why older Internet protocols only assume a 7-bit link. The original meanings of SO/SI. WRU and station ID on teletypes. BITNET and other pre-Internets.
+1.11: 2017-03-02
+
+    SIGHUP. Six-bit characters on 36-bit machines. XMODEM required 8 bits. Screensavers.
+1.12: 2017-03-18
+
+    Note just how crazily heterogenous the six-bit character sets were. FTP. Ctrl-V on Unix systems. A correction about uu{de|en}code. Timeline updates for '74 and '77.
+1.13: 2017-04-09
+
+    Null-modem cables. The term "TUI". Why it’s CR-LF and not LF-CR. Timesharing.
+1.14: 2017-07-18
+
+    Report the actual range of human audibility. By popular demand, include a "vertical" 16x4 version of the ASCII table.
+1.15: 2017-07-31
+
+    The sad tale of Gopher. Added TOC. Slow birth of distributed development. Early history of bitmapped displays.
+1.16: 2017-09-14
+
+    "8-bit" graphics and sound. Control-W.
+
+1. Actually, there was an even older style of tty interface derived from telegraph circuits and called "current loop" that the ASR-33 originally used; in the 1970s dual-mode ASR-33s that could also speak RS-232 began to ship, and RS-232 eventually replaced current loop entirely.
+2. A full explanation of the magic of the AT prefix can be found at http://esr.ibiblio.org/?p=7333&cpage=1#comment-1802568
+3. Python 3, Perl 6, and Rust have at least gotten rid of the dangerous leading-0-for-octal syntax, but Go kept it
+4. Early Intel microprocessors weren’t much like the PDP-11, but the 80286 and later converged with it in important ways.
+5. Except on teletypes, which used 7E2.
+6. The old free-floating USENET still exists too, but Google Groups is where you can find what has been preserved of the historical USENET archives.
+7. Confusingly, the ADM-3A (which could address any screen cell) was described in marketing copy as a "dumb" terminal, not a "smart" one. This is because there was a rival definition of "smart" as capable of doing local editing of the screen without involving the remote computer, like an IBM 3270. But since minicomputers never used that capability this definition was never live in the Unix world, and has mostly faded out of use.
+8. It was not commonly known that the VT100 was designed to fit a 1976 standard called ECMA-48; ANSI simply adopted it.
+9. There is a port of ADVENT in modern C.
+10. In fact, the inventor reports: "I invented Xmodem based upon an ASCII pocket reference card. ACK, NAK, SOH, EOT, sounded like good words to use to make a protocol."
+11. The Break key has a cognate in "Break!" used as a similar attention signal or interrupt in voice radio procedure. Both derive from 19th-century telegraphic practice.
+12. I was an early nethack devteam member. I did not at the time understand how groundbreaking what we were doing actually was.
+13. In particular, CVS tends to behave very badly around file renames and deletions.
+14. I’m deliberately not covering distributed VCSes other than git here; while some of them were historically and technically interesting, none ever became common knowledge.
+15. There were a few 32-bit minis before the Interdata, but they seem to have been designed for real-time or other non-timesharing uses.
+Last updated 2017-09-14 17:20:07 EDT

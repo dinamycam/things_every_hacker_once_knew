@@ -1,0 +1,112 @@
+ASCII
+
+ASCII, the American Standard Code for Information Interchange, evolved in the early 1960s out of a family of character codes used on teletypes.
+
+ASCII, unlike a lot of other early character encodings, is likely to live forever - because by design the low 127 code points of Unicode are ASCII. If you know what UTF-8 is (and you should) every ASCII file is correct UTF-8 as well.
+
+The following table describes ASCII-1967, the version in use today. This is the 16x4 format given in most references.
+
+Dec Hex Dec Hex Dec Hex Dec Hex Dec Hex Dec Hex Dec Hex Dec Hex 0 00 NUL 16 10 DLE 32 20 48 30 0 64 40 @ 80 50 P 96 60 ` 112 70 p 1 01 SOH 17 11 DC1 33 21 ! 49 31 1 65 41 A 81 51 Q 97 61 a 113 71 q 2 02 STX 18 12 DC2 34 22 " 50 32 2 66 42 B 82 52 R 98 62 b 114 72 r 3 03 ETX 19 13 DC3 35 23 # 51 33 3 67 43 C 83 53 S 99 63 c 115 73 s 4 04 EOT 20 14 DC4 36 24 $ 52 34 4 68 44 D 84 54 T 100 64 d 116 74 t 5 05 ENQ 21 15 NAK 37 25 % 53 35 5 69 45 E 85 55 U 101 65 e 117 75 u 6 06 ACK 22 16 SYN 38 26 & 54 36 6 70 46 F 86 56 V 102 66 f 118 76 v 7 07 BEL 23 17 ETB 39 27 ' 55 37 7 71 47 G 87 57 W 103 67 g 119 77 w 8 08 BS 24 18 CAN 40 28 ( 56 38 8 72 48 H 88 58 X 104 68 h 120 78 x 9 09 HT 25 19 EM 41 29 ) 57 39 9 73 49 I 89 59 Y 105 69 i 121 79 y 10 0A LF 26 1A SUB 42 2A * 58 3A : 74 4A J 90 5A Z 106 6A j 122 7A z 11 0B VT 27 1B ESC 43 2B + 59 3B ; 75 4B K 91 5B [ 107 6B k 123 7B { 12 0C FF 28 1C FS 44 2C , 60 3C < 76 4C L 92 5C \ 108 6C l 124 7C | 13 0D CR 29 1D GS 45 2D - 61 3D = 77 4D M 93 5D ] 109 6D m 125 7D } 14 0E SO 30 1E RS 46 2E . 62 3E > 78 4E N 94 5E ^ 110 6E n 126 7E ~ 15 0F SI 31 1F US 47 2F / 63 3F ? 79 4F O 95 5F _ 111 6F o 127 7F DEL
+
+However, this format - less used because the shape is inconvenient - probably does more to explain the encoding:
+
+0000000 NUL 0100000 1000000 @ 1100000 ` 0000001 SOH 0100001 ! 1000001 A 1100001 a 0000010 STX 0100010 " 1000010 B 1100010 b 0000011 ETX 0100011 # 1000011 C 1100011 c 0000100 EOT 0100100 $ 1000100 D 1100100 d 0000101 ENQ 0100101 % 1000101 E 1100101 e 0000110 ACK 0100110 & 1000110 F 1100110 f 0000111 BEL 0100111 ' 1000111 G 1100111 g 0001000 BS 0101000 ( 1001000 H 1101000 h 0001001 HT 0101001 ) 1001001 I 1101001 i 0001010 LF 0101010 * 1001010 J 1101010 j 0001011 VT 0101011 + 1001011 K 1101011 k 0001100 FF 0101100 , 1001100 L 1101100 l 0001101 CR 0101101 - 1001101 M 1101101 m 0001110 SO 0101110 . 1001110 N 1101110 n 0001111 SI 0101111 / 1001111 O 1101111 o 0010000 DLE 0110000 0 1010000 P 1110000 p 0010001 DC1 0110001 1 1010001 Q 1110001 q 0010010 DC2 0110010 2 1010010 R 1110010 r 0010011 DC3 0110011 3 1010011 S 1110011 s 0010100 DC4 0110100 4 1010100 T 1110100 t 0010101 NAK 0110101 5 1010101 U 1110101 u 0010110 SYN 0110110 6 1010110 V 1110110 v 0010111 ETB 0110111 7 1010111 W 1110111 w 0011000 CAN 0111000 8 1011000 X 1111000 x 0011001 EM 0111001 9 1011001 Y 1111001 y 0011010 SUB 0111010 : 1011010 Z 1111010 z 0011011 ESC 0111011 ; 1011011 [ 1111011 { 0011100 FS 0111100 < 1011100 \ 1111100 | 0011101 GS 0111101 = 1011101 ] 1111101 } 0011110 RS 0111110 > 1011110 ^ 1111110 ~ 0011111 US 0111111 ? 1011111 _ 1111111 DEL
+
+Using the second table, it’s easier to understand a couple of things:
+
+    The Control modifier on your keyboard basically clears the top three bits of whatever character you type, leaving the bottom five and mapping it to the 0..31 range. So, for example, Ctrl-SPACE, Ctrl-@, and Ctrl-` all mean the same thing: NUL.
+
+    Very old keyboards used to do Shift just by toggling the 32 or 16 bit, depending on the key; this is why the relationship between small and capital letters in ASCII is so regular, and the relationship between numbers and symbols, and some pairs of symbols, is sort of regular if you squint at it. The ASR-33, which was an all-uppercase terminal, even let you generate some punctuation characters it didn’t have keys for by shifting the 16 bit; thus, for example, Shift-K (0x4B) became a [ (0x5B)
+
+It used to be common knowledge that the original 1963 ASCII had been sightly different. It lacked tilde and vertical bar; 5E was an up-arrow rather than a caret, and 5F was a left arrow rather than underscore. Some early adopters (notably DEC) held to the 1963 version.
+
+If you learned your chops after 1990 or so, the mysterious part of this is likely the control characters, code points 0-31. You probably know that C uses NUL as a string terminator. Others, notably LF = Line Feed and HT = Horizontal Tab, show up in plain text. But what about the rest?
+
+Many of these are remnants from teletype protocols that have either been dead for a very long time or, if still live, are completely unknown in computing circles. A few had conventional meanings that were half-forgotten even before Internet times. A very few are still used in binary data protocols today.
+
+Here’s a tour of the meanings these had in older computing, or retain today. If you feel an urge to send me more, remember that the emphasis here is on what was common knowledge back in the day. If I don’t know it now, we probably didn’t generally know it then.
+
+NUL (Null) = Ctrl-@
+
+    Survives as the string terminator in C.
+SOH (Start of Heading) = Ctrl-A
+
+    Rarely used (as Ctrl-A) as a section divider in otherwise textual formats. Some versions of Unix mailbox format used it as a message divider. One very old version-control system (SCCS) did something similar.
+STX (Start of Text), ETX (End of Text) = Ctrl-B, Ctrl-C
+
+    Very rarely used as packet or control-sequence delimiters. You will probably never see this, and the only place I’ve ever seen it was on a non-Unix OS in the early 1980s. ETX is Ctrl-C, which is a SIGINT interrupt character on Unix systems, but that has nothing to do with its ASCII meaning per se and probably derives from abbreviating the word "Cancel".
+EOT (End of Transmission) = Ctrl-D
+
+    As Ctrl-D, the way you type "End of file" to a Unix terminal.
+ENQ (Enquiry) = Ctrl-E
+
+    In the days of hardware serial terminals, there was a convention that if a computer sent ENQ to a terminal, it should answer back with terminal type identification. While this was not universal, it at least gave computers a fighting chance of autoconfiguring what capabilities it could assume the terminal to have. Further back, on teletypes, the answerback had been a station ID rather than a device type; as late as the 1970s it was still generally remembered that ENQ’s earliest name in ASCII had been WRU ("Who are you?").
+ACK (Acknowledge) = Ctrl-F
+
+    It used to be common for wire protocols written in ASCII to use ENQ/ACK as a handshake, sometimes with NAK as a failure indication (the XMODEM/YMODEM/ZMODEM protocol did this [10]). Hackers used to use ACK in speech as "I hear you" and were a bit put out when this convention was disrupted in the 1980s by Bill The Cat’s "Ack! Thppt!"
+BEL (Bell) = Ctrl-G
+
+    Make the bell ring on the teletype - an attention signal. This often worked on VDTs as well, but is no longer reliably the default on software terminal emulators. Some map it to a visual indication like flashing the title bar.
+BS (Backspace) = Ctrl-H
+
+    Still does what it says on the tin, though there has been some historical confusion over whether the backspace key on a keyboard should behave like BS (nondestructive cursor move) or DEL (backspace and delete). Never used in textual data protocols.
+HT (Horizontal tab) = Ctrl-I
+
+    Still does what it says on the tin. Sometimes used as a field separator in Unix textual file formats, but this is now old-fashioned and declining in usage.
+LF (Line Feed) = Ctrl-J
+
+    The Unix textual end-of-line. Printing terminals interpreted it as "scroll down one line"; the Unix tty driver would normally wedge in a CR right before it on output (or in early versions, right after).
+VT (Vertical Tab) = Ctrl-K
+
+    In the days of printing terminals this often caused them to scroll down a configurable number of lines. VDTs had any number of possible behaviors; at least some pre-ANSI ones interpreted VT as "scroll up one line". The only reason anybody remembers this one at all is that it persisted in Unix definitions of what a whitespace character is, even though it’s now extinct in the wild.
+FF (Form Feed) = Ctrl-L
+
+    Eject the current page from your printing terminal. Many VDTs interpreted this as a "clear screen" instruction. Software terminal emulators sometimes still do.
+CR (Carriage Return) = Ctrl-M
+
+    It is now possible that the reader has never seen a typewriter, so this needs explanation: "carriage return" is the operation of moving your print head or cursor to the left margin. Windows, other non-Unix operating systems, and some Internet protocols (such as SMTP) tend to use CR-LF as a line terminator, rather than bare LF. The reason it was CR-LF rather than LF-CR goes back to Teletypes: a Teletype printed ten characters per second, but the print-head carriage took longer than a tenth of a second to return to the left side of the paper. So if you ended a line with line-feed, then carriage-return, you would usually see the first character of the next line smeared across the middle of the paper, having been struck while the carriage was still zipping to the left. Pre-Unix MacOS used a bare CR.
+SO (Shift Out), SI (Shift In) = Ctrl-N, Ctrl-O
+
+    Escapes to and from an alternate character set. Unix software used to emit them to drive pre-ANSI VDTs that interpreted them that way, but native Unix usage is rare to nonexistent. On teletypes with a two-color ink ribbon (the second color usually being red) SO was a command to shift to the alternate color, SI to shift back.
+DLE (Data Link Escape) = Ctrl-P
+
+    Sometimes used as a packet-framing character in binary protocols. That is, a packet starts with a DLE, ends with a DLE, and if one of the interior data bytes matches DLE it is doubled.
+DC[1234] (Device Control [1234]) = Ctrl-[QRST]
+
+    Never to my knowledge used specially after teletypes. However: there was a common software flow-control protocol, used over ASCII but separate from it, in which XOFF (DC3) was used as a request to pause transmission and XON (DC1) was used as a request to resume transmission. As Ctrl-S and Ctrl-Q these were implemented in the Unix terminal driver and long outlived their origin in the Model 33 Teletype. And not just Unix; this was implemented in CP/M and DOS, too.
+NAK (Negative Acknowledge) = Ctrl-U
+
+    See the discussion of ACK above.
+SYN (Synchronous Idle) = Ctrl-V
+
+    Never to my knowledge used specially after teletypes, except in synchronous serial protocols never used on micros or minis. Be careful not to confuse this with the SYN (synchronization) packet used in TCP/IP’s SYN SYN-ACK initialization sequence. In an unrelated usage, many Unix tty drivers use this (as Ctrl-V) for the literal-next character that lets you quote following control characters such as Ctrl-C.
+ETB (End of Transmission Block) = Ctrl-W
+
+    Nowadays this is usually "kill window" on a web browser, but it used to mean "delete previous word" in some contexts.
+CAN (Cancel), EM (End of Medium) = Ctrl-X, Ctrl-Y
+
+    Never to my knowledge used specially after teletypes.
+SUB (Substitute) = Ctrl-Z
+
+    DOS and Windows use Ctrl-Z (SUB) as an end-of-file character; this is unrelated to its ASCII meaning. It was common knowledge then that this use of ^Z had been inherited from a now largely forgotten earlier OS called CP/M (1974), and into CP/M from earlier DEC minicomputer OSes such as RSX-11 (1972). Unix uses Ctrl-Z as the "suspend process" command keystroke.
+ESC (Escape)
+
+    Still commonly used as a control-sequence introducer. This usage is especially associated with the control sequences recognized by VT100 and ANSI-standard VDTs, and today by essentially all software terminal emulators
+[FGRU]S ({Field|Group|Record|Unit} Separator)
+
+    There are some uses of these in ATM and bank protocols (these have never been common knowledge, but I’m adding this note to forestall yet more repetitions from area specialists who will apparently otherise keep telling me about it until the end of time). FS, as Ctrl-\, sends SIGQUIT under some Unixes, but this has nothing to do with ASCII. Ctrl-] (GS) is the exit character from telnet, but this also has nothing to do with its ASCII meaning.
+DEL (Delete)
+
+    Usually an input character meaning "backspace and delete". Under older Unix variants, sometimes a SIGINT interrupt character.
+
+Not all of these were so well known that any hacker could instantly map from mnemonic to binary, or vice-versa. The well-known set was roughly NUL, BEL, BS, HT, LF, FF, CR, ESC, and DEL.
+
+There are a few other bits of ASCII lore worth keeping in mind…
+
+    A Meta or Alt key on a VDT added 128 to the ASCII keycode for whatever it’s modifying (probably - on a few machines with peculiar word lengths they did different things). Software terminal emulators have more variable behavior; many of them now simply insert an ESC before the modified key, which Emacs treats as equivalent to adding 128.
+
+    An item of once-common knowledge that was half-forgotten fairly early (like, soon after VDTs replaced teletypes) is that the the binary value of DEL (0x7F, 0b01111111) descends from its use on paper tape. Seven punches could overwrite any character in ASCII, and tape readers skipped DEL (and NUL - no punches). This is why DEL was anciently called the "Rubout" character and is an island at the other end of the ASCII table from the other control characters.
+
+    VDT keyboards often had a "Break" key inherited from the ASR-33 (there’s a vestigial remnant of this even on the IBM PC keyboard). This didn’t send a well-formed ASCII character; rather, it caused an out-of-band condition that would be seen as a NUL with a framing error at the other end. This was used as an attention or interrupt signal [11].
+
+You can study the bit structure of ASCII using ascii(1). Both of the tables above were generated using it.

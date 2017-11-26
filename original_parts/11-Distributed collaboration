@@ -1,0 +1,25 @@
+The slow birth of distributed collaboration
+
+Nowadays we take for granted a public infrastructure of distributed version control and a lot of practices for distributed teamwork that go with it - including development teams that never physically have to meet. But these tools, and awareness of how to use them, were a long time developing. They replace whole layers of earlier practices that were once general but are now half- or entirely forgotten.
+
+The earliest practice I can identify that was directly ancestral was the DECUS tapes. DECUS was the Digital Equipment Corporation Users' Group, chartered in 1961. One of its principal activities was circulating magnetic tapes of public-domain software shared by DEC users. The early history of these tapes is not well-documented, but the habit was well in place by 1976.
+
+One trace of the DECUS tapes seems to be the README convention. While it entered the Unix world through USENET in the early 1980s, it seems to have spread there from DECUS tapes. The DECUS tapes begat the USENET source-code groups, which were the incubator of the practices that later became "open source". Unix hackers used to watch for interesting new stuff on comp.sources.unix as automatically as they drank their morning coffee.
+
+The DECUS tapes and the USENET sources groups were more of a publishing channel than a collaboration medium, though. Three pieces were missing to fully support that: version control, patching, and forges.
+
+Version control was born in 1972, though SCCS (Source Code Control System) didn’t escape Bell Labs until 1977. The proprietary licensing of SCCS slowed its uptake; one response was the freely reusable RCS (Revision Control System) in 1982.
+
+The first real step towards across-network collaboration was the patch(1) utility in 1984. The concept seems so obvious now that even hackers who predate patch(1) have trouble remembering what it was like when we only knew how to pass around source-code changes as entire altered files. But that’s how it was.
+
+Even with SCCS/RCS/patch the friction costs of distributed development over the Internet were still so high that some years passed before anyone thought to try it seriously. I have looked for, but not found, definite examples earlier than nethack. This was a roguelike game launched in 1987. Nethack developers passed around whole files - and later patches - by email, sometimes using SCCS or RCS to manage local copies. [12].
+
+Distributed development could not really get going until the third major step in version control. That was CVS (Concurrent Version System) in 1990, the oldest VCS still in wide use at time of writing in 2017. Though obsolete and now half-forgotten, CVS was the first version-control system to become so ubiquitous that every hacker once knew it. CVS, however, had significant design flaws [13]; it fell out of use rapidly when better alternatives became available.
+
+Between around 1989 and the breakout of mass-market Internet in 1993-1994, fast Internet became available enough to hackers that distributed development in the modern style began to become thinkable. The next major steps were not technical changes but cultural ones.
+
+In 1991 Linus Torvalds announced Linux as a distributed collaborative effort. It is now easy to forget that early Linux development used the same patch-by-email method as nethack - there were no public Linux repositories yet. The idea that there ought to be public repositories as a normal practice for major projects (in addition to shipping source tarballs) wouldn’t really take hold until after I published "The Cathedral and the Bazaar" in 1997. While CatB was influential in promoting distributed development via shared public repositories, the technical weaknesses of CVS were in hindsight probably an equally important reason this practice did not become established sooner and faster.
+
+The first dedicated software forge was not spun up until 1999. That was SourceForge, still extant today. At first it supported only CVS, but it sped up the adoption of the (greatly superior) Subversion, launched in 2000 by a group of former CVS developers.
+
+Between 2000 and 2005 Subversion became ubiquitous common knowledge. But in 2005 Linus Torvalds invented git, which would fairly rapidly obsolesce all previous version-control systems and is a thing every hacker now knows [14].

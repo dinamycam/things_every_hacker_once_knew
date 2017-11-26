@@ -1,0 +1,35 @@
+RS232 and its discontents
+
+A TCP/IP link generally behaves like a clean stream of 8-bit bytes (formally, octets). You get your data as fast as the network can run, and error detection/correction is done somewhere down below the layer you can see.
+
+RS-232 was not like that. Two devices speaking it had to agree on a common line speed - also on how the byte framing works (the latter is why you’ll see references to "stop bits" in related documentation). Finally, error detection and correction was done in-stream, sort of. RS232 devices almost always spoke ASCII, and used the fact that ASCII only filled 7 bits. The top bit might be, but was not always, used as a parity bit for error detection. If not used, the top bit could carry data.
+
+You had to set your equipment at both ends for a specific combination of all of these. After about 1984 anything other than "8N1" - eight bits, no parity, one stop bit - became increasingly rare. Before that, all kinds of weird combinations were in use. Even parity ("E") was more common than odd ("O") and 1 stop bit more common than 2 [5], but you could see anything come down a wire. And if you weren’t properly set up for it, all you got was "baud barf" - random 8-bit garbage rather than the character data you were expecting.
+
+This, in particular, is one reason the API for the POSIX/Unix terminal interface, termios(3), has a lot of complicated options with no obvious modern-day function. It had to be able to manipulate all these settings, and more.
+
+Another consequence was that passing binary data over an RS-232 link wouldn’t work if parity was enabled - the high bits would get clobbered. Other now-forgotten wide-area network protocols reacted even worse, treating in-band characters with 0x80 on as control codes with results ranging from amusing to dire. We had a term, "8-bit clean", for networks and software that didn’t clobber the 0x80 bit. And we needed that term…
+
+The fragility of the 0x80 bit back in those old days is the now largely forgotten reason that the MIME encoding for email was invented (and within it the well-known MIME64 encoding). Even the version of SMTP current as I write (RFC 5321) is still essentially a 7-bit protocol, though modern end points can now optionally negotiate passing 8-bit data.
+
+But before MIME there was uuencode/uudecode, a pair of filters for rendering 8-bit data in 7 bits that is still occasionally used today in Unixland. In this century uuencoding has largely been replaced by MIME64, but there are places you can still trip over uuencoded binary archives.
+
+Even the RS-232 physical connector varied. Standard RS-232 as defined in 1962 used a roughly D-shaped shell with 25 physical pins (DB-25), way more than the physical protocol actually required (you can support a minimal version with just three wires, and this was actually common). Twenty years later, after the IBM PC-AT introduced it in 1984, most manufacturers switched to using a smaller DB-9 connector (which is technically a DE-9 but almost nobody ever called it that). If you look at a PC with a serial port it is most likely to be a DB-9; confusingly, DB-25 came to be used for printer parallel ports (which originally had a very different connector) before those too were obsolesced by USB and Ethernet.
+
+Anybody who worked with this stuff had to keep around a bunch of specialized hardware - gender changers, DB-25-to-DB-9 adapters (and the reverse), breakout boxes, null modems, and other gear I won’t describe in detail because it’s left almost no traces in today’s tech. Hackers of a certain age still tend to have these things cluttering their toolboxes or gathering dust in a closet somewhere.
+
+The main reason to still care about any of this (other than understanding greybeard war stories) is that some kinds of sensor and control equipment and IoT devices still speak RS-232, increasingly often wrapped inside a USB emulation. The most common devices that do the latter are probably GPS sensors designed to talk to computers (as opposed to handheld GPSes or car-navigation systems).
+
+Because of devices like GPSes, you may still occasionally need to know what an RS-232 "handshake line" is. These were originally used to communicate with modems; a terminal, for example, could change the state of the DTR (Data Terminal Ready) line to indicate that it was ready to receive, initiate, or continue a modem session.
+
+Later, handshake lines were used for other equipment-specific kinds of out-of-band signals. The most commonly re-used lines were DCD (data carrier detect) and RI (Ring Indicator).
+
+Three-wire versions of RS-232 omitted these handshake lines entirely. A chronic source of frustration was equipment at one end of your link that failed to supply an out-of-band signal that the equipment at the other end needed. The modern version of this is GPSes that fail to supply their 1PPS (a high-precision top-of-second pulse) over one of the handshake lines.
+
+Even when your hardware generated and received handshake signals, you couldn’t necessarily trust cables to pass them. Cheap cables often failed to actually connect all 25 (or 9) leads end-to-end. Then there were "crossover" or "null modem" cables, which for reasons too painful to go into here crosswired the transmit and receive lines. Of course none of these variants were reliably labeled, so debugging an RS232 link with a random cable pulled out of a box often involved a lot of profanity.
+
+Another significant problem was that an RS-232 device not actually sending data was undetectable without analog-level monitoring equipment. You couldn’t tell a working but silent device from one that had come unplugged or suffered a connection fault in its wiring. This caused no end of complications when troubleshooting and is a major reason USB was able to displace RS-232 after 1994.
+
+A trap for the unwary that opened up after about the year 2000 is that peripheral connectors labeled RS232 could have one of two different sets of voltage levels. If they’re pins or sockets in a DB9 or DB25 shell, the voltage swing between 1 and 0 bits can be as much as 50 volts, and is usually about 26. Bare connectors on a circuit board, or chip pins, increasingly came to use what’s called "TTL serial" - same signalling with a swing of 3.3 or (less often) 5 volts. You can’t wire standard RS232 to TTL serial directly; the link needs a device called a "level shifter". If you connect without one, components on the TTL side will get fried.
+
+RS-232 passed out of common knowledge in the mid- to late 1990s, but didn’t finally disappear from general-purpose computers until around 2010. Standard RS-232 is still widely used not just in the niche applications previously mentioned, but also in point-of-sale systems and diagnostic consoles on commercial-grade routers. The TTL serial variant is often used on maker devices.

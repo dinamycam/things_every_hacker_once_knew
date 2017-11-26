@@ -1,0 +1,7 @@
+FTP, Gopher, and the forgotten pre-Web
+
+The World Wide Web went from nowhere to ubiquity during a few short years in the early 1990s. Before that, from 1971 onwards, file transfer between Internet sites was normally done with a tool named ftp, for the File Transfer Protocol it used. Every hacker once knew how to use this tool.
+
+Eventually ftp was mostly subsumed by web browsers speaking the FTP protocol themselves. This is why you may occasionally still see URLs with an "ftp:" service prefix; this informs the browser that it should expect to speak to an FTP server rather than an HTTP/HTTPS server.
+
+There was another. The same year (1991) that Tim Berners-Lee was inventing the World Wide Web, a group of hackers at the University of Minnesota devised "Gopher", a hypertext protocol that was menu-centric rather than link-centric. For a few years Gopher competed vigorously with the early Web, and many hackers used both. Adoption was stalled when the University decided to charge a license fee for its implementation in early 1993. Then, early Web browsers added the ability to speak Gopher protocol and display Gopher documents. By 2000 Gopher was effectively dead, although a few Gopher servers are still operated in a spirit of nostalgia and irony.

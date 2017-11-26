@@ -1,0 +1,91 @@
+Key dates
+
+These are dates that every hacker knew were important at the time, or shortly afterwards. I’ve tried to concentrate on milestones for which the date - or the milestone itself - seems to have later passed out of folk memory.
+
+1961
+
+    MIT takes delivery of a PDP-1. The first recognizable ancestor of the hacker culture of today rapidly coalesces around it.
+1969
+
+    Ken Thompson begins work on what will become Unix. First commercial VDT ships; it’s a glass TTY. First packets exchanged on the ARPANET, the direct ancestor of today’s Internet.
+1970
+
+    DEC PDP-11 first ships; architectural descendants of this machine, including later Intel microprocessors, will come to dominate computing.
+1973
+
+    Interdata 32 ships; the long 32-bit era begins [15]. Unix Edition 5 (not yet on the Interdata) escapes Bell Labs to take root at a number of educational institutions. The XEROX Alto pioneers the "workstation" - a networked personal computer with a high-resolution display and a mouse.
+1974
+
+    CP/M first ships; this will be the OS for a large range of microcomputers until effectively wiped out by MS-DOS after 1981. MS/DOS will, however, have been largely cloned from CP/M; this theft leaves rather unmistakable traces in the BIOS. It’s also why MS-DOS has filenames with at most 8 characters of name and 3 of extension.
+1975
+
+    First Altair 8800 ships; beginning of heroic age of microcomputers. First 24x80 and 25x80 "smart" (addressable-cursor) VDTs. ARPANET declared "operational", begins to spread to major universities.
+1976
+
+    "Lions' Commentary on UNIX 6th Edition, with Source Code" released. First look into the Unix kernel source for most hackers, and was a huge deal in those pre-open-source days. First version of ADVENT is written. First version of the Emacs text editor.
+1977
+
+    Unix ported to the Interdata; first version with a kernel written largely in C rather than machine-dependent assembler. Second generation of home computers (Apple II and TRS-80 Model 1) ship. SCCS, the first version-control system, is publicly released.
+1978
+
+    First BBS launched - CBBS, in Chicago.
+1979
+
+    MIT Dungeon, later known as Zork, is written; the first grues lurk in dark places.
+1980
+
+    Rogue, ancestral to all later top-view dungeon-crawling games, is invented. USENET begins.
+1981
+
+    First IBM PC ships; end of the heroic age of micros. TCP/IP is implemented on a VAX-11/780 under 4.1BSD Unix; ARPANET and Unix cultures begin to merge.
+1982
+
+    After some false starts from 1980-1981 with earlier 68000-based micros of similar design, the era of commercial Unix workstations truly begins with the founding and early success of Sun Microsystems. RCS, the second version-control system, ships.
+1983
+
+    PDP-10 canceled; this is effectively the end of 36-bit architectures anywhere outside of deep mainframe country, though Symbolics Lisp machines hold out a while longer. ARPANET, undergoing some significant technical changes, becomes Internet.
+1984
+
+    AT&T begins a largely botched attempt to commercialize Unix, clamping down on access to source code. In the BBS world, FidoNet is invented. The patch(1) utility is invented.
+1985
+
+    RMS published GNU Manifesto. This is also roughly the year the C language became the dominant lingua franca of both systems and applications programming, eventually displacing earlier compiled language so completely that they are almost forgotten. First Model M keyboard ships.
+1986
+
+    Intel 386 ships; end of the line for 8- and 16-bit PCs. Consumer-grade hardware in this class wouldn’t be generally available until around 1989, but after that would rapidly surpass earlier 32-bit minicomputers and workstations in capability.
+1987
+
+    USENET undergoes the Great Renaming. Perl, first of the modern scripting languages, is invented.
+1991
+
+    Linux and the World Wide Web are (separately) launched. Python scripting language invented.
+1992
+
+    Bit-mapped color displays with a dot pitch matching that of a monochrome VDT (and a matching ability to display crisp text at 80x25) ship on consumer-grade PCs. Bottom falls out of the VDT market.
+1993
+
+    Linux gets TCP/IP capability, moves from hobbyist’s toy to serious OS. America OnLine offers USENET access to its users; "September That Never Ended" begins. Mosaic adds graphics and image capability to the World Wide Web.
+1994
+
+    Mass-market Internet takes off in the U.S. USB promulgated.
+1995-1996
+
+    Peak years of UUCP/USENET and the BBS culture, then collapse under pressure from mass-market Internet.
+1997
+
+    I first give the "Cathedral and Bazaar" talk.
+1999
+
+    Banner year of the dot-com bubble. End of workstation era: Market for Suns and other proprietary Unix workstations collapses under pressure from Linux running on PCs.
+2000
+
+    Subversion first ships.
+2001
+
+    Dot-com bubble pops. PC hardware with workstation-class capabilities becomes fully commoditized; pace of visible innovation in mass-market computers slows noticeably.
+2005
+
+    Major manufacturers cease production of cathode-ray tubes in favor of flat-panel displays. Flat-panels have been ubiquitous on new hardware since about 2003. There is a brief window until about 2007 during which high-end CRTs no longer in production still exceed the resolution of flat-panel displays and are still sought after. Also in 2005, AOL drops USENET support and Endless September ends. Git first ships.
+2007-2008
+
+    64-bit transition in mass market PCs; the 32-bit era ends. Single-processor speeds plateau at 4±0.25GHz. iPhone and Android (both with Unix-based OSes) first ship.

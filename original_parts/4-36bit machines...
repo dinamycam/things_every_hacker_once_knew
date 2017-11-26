@@ -1,0 +1,27 @@
+36-bit machines and the persistence of octal
+
+There’a a power-of-two size hierarchy in memory units that we now think of as normal - 8 bit bytes, 16 or 32 or 64-bit words. But this did not become effectively universal until after 1983. There was an earlier tradition of designing computer architectures with 36-bit words.
+
+There was a time when 36-bit machines loomed large in hacker folklore and some of the basics about them were ubiquitous common knowledge, though cultural memory of this era began to fade in the early 1990s. Two of the best-known 36-bitters were the DEC PDP-10 and the Symbolics 3600 Lisp machine. The cancellation of the PDP-10 in '83 proved to be the death knell for this class of machine, though the 3600 fought a rear-guard action for a decade afterwards.
+
+Hexadecimal is a natural way to represent raw memory contents on machines with the power-of-two size hierarchy. But octal (base-8) representations of machine words were common on 36-bit machines, related to the fact that a 36-bit word naturally divides into 12 3-bit fields naturally represented as octal. In fact, back then we generally assumed you could tell which of the 32- or 36-bit phyla a machine belonged in by whether you could see digits greater than 7 in a memory dump.
+
+Here are a few things every hacker used to know that related to these machines:
+
+    36 bits was long enough to represent positive and negative integers to an accuracy of ten decimal digits, as was expected on mechanical calculators of the era. Standardization on 32 bits was unsuccessfully resisted by numerical analysts and people in scientific computing, who really missed that last 4 bits of accuracy.
+
+    A "character" might be 9 bits on these machines, with 4 packed to a word. Consequently, keyboards designed for them might have both a meta key to assert bit 8 and a now-extinct extra modifier key (usually but not always called "Super") that asserted bit 9. Sometimes this selected a tier of non-ASCII characters including Greek letters and mathematical symbols.
+
+    Alternatively, 6-bit characters might be packed 6 to a word. There were many different 6-bit character encodings; not only did they differ across a single manufacturer’s machines, but some individual machines used multiple incompatible encodings. This is why older non-Unix minicomputers like the PDP-10 had a six-character limit on filenames - this allowed an entire filename to be packed in a single 36-bit word. If you ever see the following acronyms it is a clue that you may have wandered into this swamp: SIXBIT, FIELDATA, RADIX-50, BCDIC.
+
+It used also to be generally known that 36-bit architectures explained some unfortunate features of the C language. The original Unix machine, the PDP-7, featured 18-bit words corresponding to half-words on larger 36-bit computers. These were more naturally represented as six octal (3-bit) digits.
+
+The immediate ancestor of C was an interpreted language written on the PDP-7 and named B. In it, a numeric literal beginning with 0 was interpreted as octal.
+
+The PDP-7’s successor, and the first workhorse Unix machine was the PDP-11 (first shipped in 1970). It had 16-bit words - but, due to some unusual peculiarities of the instruction set, octal made more sense for its machine code as well. C, first implemented on the PDP-11, thus inherited the B octal syntax. And extended it: when an in-string backslash has a following digit, that was expected to lead an octal literal.
+
+The Interdata 32, VAX, and other later Unix platforms didn’t have those peculiarities; their opcodes expressed more naturally in hex. But C was never adjusted to prefer hex, and the surprising interpretation of leading 0 wasn’t removed.
+
+Because many later languages (Java, Python, etc) copied C’s low-level lexical rules for compatibility reasons, the relatively useless and sometimes dangerous octal syntax besets computing platforms for which three-bit opcode fields are wildly inappropriate, and may never be entirely eradicated [3].
+
+The PDP-11 was so successful that architectures strongly influenced by it (notably, including Intel [4] and ARM microprocessors) eventually took over the world, killing off 36-bit machines.
