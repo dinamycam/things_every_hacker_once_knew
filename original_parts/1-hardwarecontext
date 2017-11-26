@@ -1,0 +1,23 @@
+Hardware context
+
+Nowadays, when two computers talk to each other, it’s usually via TCP/IP over some physical layer you seldom need to care much about. And a "terminal" is actually a "terminal emulator", a piece of software that manages part of a bit-mapped display and itself speaks TCP/IP.
+
+Before ubiquitous TCP/IP and bit-mapped displays things were very different. For most hackers that transition took place within a few years of 1992 - perhaps somewhat earlier if you had access to then-expensive workstation hardware.
+
+Before then there were video display terminals - VDTs for short. In the mid-1970s these had displaced an earlier generation of printing terminals derived from really old technology called a "teletype", which had evolved around 1900 from Victorian telegraph networks. The very earliest versions of Unix in the late 1960s were written for these printing terminals, in particular for the Teletype Model 33 (aka ASR-33); the "tty" that shows up in Unix device names was a then-common abbreviation for "teletype".
+
+(This is not the only Unix device name that is a fossil from a bygone age. There’s also /dev/lp for the system default printer; every hacker once knew that the "lp" stood for "line printer", a type of line-at-a-time electromechanical printer associated with mainframe computers of roughly the same vintage as the ASR-33.)
+
+It’s half-forgotten now that these VDTs were deployed in fleets attached to large central machines. Today a single personal computer has multiple processors, but back then all the the VDTs and their users on a machine divided up a single processor; this was called "timesharing". Modern Unixes still have this capability, if anyone still cared to use it; the typical setup of having many "virtual terminals", accessible by pressing Ctrl-Alt-Fsomething, uses the very mechanism that originally provided access to many terminals for timesharing.
+
+In those pre-Internet days computers didn’t talk to each other much, and the way teletypes and terminals talked to computers was a hardware protocol called "RS-232" (or, if you’re being pedantic, "EIA RS-232C"). [1] Before USB, when people spoke of a "serial" link, they meant RS-232, and sometimes referred to the equipment that spoke it as "serial terminals".
+
+RS-232 had a very long service life; it was developed in the early 1960s, not originally for computer use but as a way for teletypewriters to talk to modems. Though it has passed out of general use and is no longer common knowledge, it’s not quite dead even today.
+
+I’ve been simplifying a bit here. There were other things besides RS-232 and serial terminals going on, notably on IBM mainframes. But they’ve left many fewer traces in current technology and its folklore. This is because the lineage of modern Unix passes back through a now-forgotten hardware category called a "minicomputer", especially minicomputers made by the Digital Equipment Corporation. ASCII, RS-232 and serial terminals were part of the technology cluster around minicomputers - as was, for that matter, Unix itself.
+
+Minicomputers were wiped out by workstations and workstations by descendants of the IBM PC, but many hackers old enough to remember the minicomputer era (mid-1960s to mid-1980s) tend still to get a bit misty-eyed about the DEC hardware they cut their teeth on.
+
+Often, however, nostalgia obscures how very underpowered those machines were. For example: a DEC VAX 11-780 minicomputer in the mid-1980s, used for timesharing and often supporting a dozen simultaneous users, had less than 1/1000 the processing power and less than 1/5000 times as much storage available as a low-end smartphone does in 2017.
+
+In fact, until well into the 1980s microcomputers ran slowly enough (and had poor enough RF shielding) that this was common knowledge: you could put an AM radio next to one and get a clue when it was doing something unusual, because either fundamentals or major subharmonics of the clock frequencies were in the 20Hz to 20KHz range of human audibility. Nothing has run that slowly since the turn of the 21st century.

@@ -1,0 +1,27 @@
+Hardware context
+The strange afterlife of the Hayes smartmodem
+Preserving core values
+36-bit machines and the persistence of octal
+RS232 and its discontents
+WAN time gone: The forgotten pre-Internets
+FTP, Gopher, and the forgotten pre-Web
+Terminal confusion
+The early, awful days of bitmapped displays
+Games before GUIs
+ASCII
+The slow birth of distributed collaboration
+Key dates
+Request to contributors
+Supporting this work
+Related Reading
+Change history
+
+One fine day in January 2017 I was reminded of something I had half-noticed a few times over the previous decade. That is, younger hackers don’t know the bit structure of ASCII and the meaning of the odder control characters in it.
+
+This is knowledge every fledgling hacker used to absorb through their pores. It’s nobody’s fault this changed; the obsolescence of hardware terminals and the near-obsolescence of the RS-232 protocol is what did it. Tools generate culture; sometimes, when a tool becomes obsolete, a bit of cultural commonality quietly evaporates. It can be difficult to notice that this has happened.
+
+This document begin as a collection of facts about ASCII and related technologies, notably hardware serial terminals and RS-232 and modems. This is lore that was at one time near-universal and is no longer. It’s not likely to be directly useful today - until you trip over some piece of still-functioning technology where it’s relevant (like a GPS puck), or it makes sense of some old-fart war story. Even so, it’s good to know anyway, for cultural-literacy reasons.
+
+One thing this collection has that tends to be indefinite in the minds of older hackers is calendar dates. Those of us who lived through all this tend to have remembered order and dependencies but not exact timing; here, I did the research to pin a lot of that down. I’ve noticed that people have a tendency to retrospectively back-date the technologies that interest them, so even if you did live through the era it describes you might get a few surprises from reading this.
+
+There are lots of references to Unix in here because I am mainly attempting to educate younger open-source hackers working on Unix-derived systems such as Linux and the BSDs. If those terms mean nothing to you, the rest of this document probably won’t either.

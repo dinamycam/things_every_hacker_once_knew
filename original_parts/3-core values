@@ -1,0 +1,7 @@
+Preserving core values
+
+From about 1955 to 1975 - before semiconductor memory - the dominant technology in computer memory used tiny magnetic doughnuts strung on copper wires. The doughnuts were known as "ferrite cores" and main memory thus known as "core memory" or "core".
+
+Unix terminology was formed in the early 1970s, and compounds like "in core" and "core dump" survived into the semiconductor era. Until as late as around 1990 it could still be assumed that every hacker knew from where these terms derived; even microcomputer hackers for which memory had always been semiconductor RAM tended to pick up this folklore rapidly on contact with Unix.
+
+After 2000, however, as multiprocessor systems became increasingly common even on desktops, "core" increasingly took on a conflicting meaning as shorthand for "processor core". In 2017 "core" can still mean either thing, but the reason for the older usage is no longer generally understood and idioms like "in core" may be fading.
